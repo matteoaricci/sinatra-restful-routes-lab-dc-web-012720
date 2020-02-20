@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Just One Recipe</title>
+</head>
+
+    <body>
+
+    <h1><%= @recipe.find(@id).name %></h1>
+    <h2><%= @recipe.find(@id).ingredients %></h2>
+    <h2><%= @recipe.find(@id).cook_time %></h2>
+
+    <form method="post" action="/recipes/<%= @recipe.find(@id).id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete">
+    </form>
+    </body>
+
+</html>
